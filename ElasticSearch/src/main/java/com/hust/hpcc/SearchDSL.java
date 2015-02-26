@@ -43,7 +43,6 @@ public class SearchDSL {
 	}
 
 	public static void main(String[] args) {
-		System.out.println("helloworld");
 		Node node = NodeBuilder.nodeBuilder().clusterName("TuyenNG").node();
 		Client client = node.client();
 		searchDSL(client, "bank", "account", "lastname", "fox");
