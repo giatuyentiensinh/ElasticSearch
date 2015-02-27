@@ -95,7 +95,7 @@ public class AggregationIndex {
 				.addAggregation(
 						AggregationBuilders.geoDistance("geo").field(field)
 								.point(new GeoPoint("15, 105"))
-								.unit(DistanceUnit.YARD).addUnboundedTo(10000)
+								.unit(DistanceUnit.KILOMETERS).addUnboundedTo(10000)
 								.addRange(10000, 1200000)
 								.addUnboundedFrom(1200000)).execute()
 				.actionGet();
@@ -115,7 +115,7 @@ public class AggregationIndex {
 	public static void main(String[] args) {
 		Node node = NodeBuilder.nodeBuilder().clusterName("TuyenNG").node();
 		Client client = node.client();
-		aggregations(client, "bank", "account", "age");
+		aggregations(client, "elastic", "geo", "nothing");
 		node.close();
 	}
 
